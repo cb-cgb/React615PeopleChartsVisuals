@@ -63,10 +63,12 @@ onToggleChart=()=> {
 
       {this.state.showchart &&  
        <div style={{ height: 200 }}>
+         
            <PieChart     
             animate={true}
             data={piedata}
-          />     
+            label={({ dataEntry }) => `${Math.round(dataEntry.percentage)} %`}     
+           />     
       </div>  
        }
 

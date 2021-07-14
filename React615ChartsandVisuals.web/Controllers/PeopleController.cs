@@ -68,23 +68,25 @@ namespace React615ChartsandVisuals.web.Controllers
         [HttpPost]
         [Route("addmany")]
         public void AddPeple(SliderValues s)
-        {
-            var age = Faker.RandomNumber.Next(s.MinAge, s.MaxAge); //random number between min and max
-            var dob = DateTime.Now.AddYears(-age);
+        {          
 
-            var people = Enumerable.Range(1, s.PplCount).Select(_ => new Person
+            var people = Enumerable.Range(1, s.PplCount).Select(_ => 
             {
-                LastName = Faker.Name.Last(),
-                FirstName = Faker.Name.First(),
-                Age = age,
-                DOB = dob
+                var age = Faker.RandomNumber.Next(s.MinAge, s.MaxAge); //random number between min and max
+                var dob = DateTime.Now.AddYears(-age);
+
+                return (new Person
+                {
+                    LastName = Faker.Name.Last(),
+                    FirstName = Faker.Name.First(),
+                    Age = age,
+                    DOB = dob
+                });
             });
 
             var db = new PersonRepository(_conn);
             db.AddPeople(people);
         }
-         
-        
 
 
         [HttpGet]
