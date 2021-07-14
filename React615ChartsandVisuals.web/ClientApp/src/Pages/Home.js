@@ -67,7 +67,9 @@ onToggleChart=()=> {
            <PieChart     
             animate={true}
             data={piedata}
-            label={({ dataEntry }) => `${Math.round(dataEntry.percentage)} %`}     
+            //label={({ dataEntry }) => `${Math.round(dataEntry.percentage)} %`}     
+            
+            label={ ({ dataEntry }) => dataEntry.value }
            />     
       </div>  
        }

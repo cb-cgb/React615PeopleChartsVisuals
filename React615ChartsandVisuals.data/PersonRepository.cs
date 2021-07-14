@@ -56,11 +56,11 @@ namespace React615ChartsandVisuals.data
 
                 }).ToList();
 
-                var grouped = ppl.OrderBy(p=> p.AgeBracket).GroupBy(p => p.AgeBracket).Select(a => new AgeCategory
+                var grouped = ppl.GroupBy(p => p.AgeBracket).Select(a => new AgeCategory
                 {
-                    AgeBracket = a.Key,
+                    AgeBracket = $"{a.Key} - ({a.Count()})",//output a string of the bracket with the count. 
                     PeopleCount = a.Count()
-                }).ToList();
+                }).OrderBy(p => p.AgeBracket).ToList();
 
                 return grouped;
             }
@@ -68,15 +68,21 @@ namespace React615ChartsandVisuals.data
 
         static string AgeCategory(int? age)
         {
-          
+         
             var decadestart = (age/10)*10;
             var decadeend =  decadestart + 10;
-            if (decadestart >0)
-            {
+
+            if (decadestart > 0 && age != decadestart ) // for the  case of  decade = 10 or more, we want the bracket to be 1 above the decade, i.e. 21 would come out to be decade 20 but we want it read 21-30, not 20-30. 
+            {                     // anything under 10 is decade 0 so we want that to remain as 0-10. 
+                                  //excluding the case where age = decade, i.e. age 10,20,30,40,50,60...etc. 
                 decadestart++;
-                decadeend = decadestart + 9;
             }
 
+            if (age == decadestart) //if age = the decade start, we want to include it in the lower bracket(10 in 0 - 10, 20 in 11 - 20).
+            {
+                decadestart = (age - 1) / 10 *10;
+                decadeend = decadestart + 10;
+            }
             string label = $"{decadestart}-{decadeend}";
             return label;         
         }
