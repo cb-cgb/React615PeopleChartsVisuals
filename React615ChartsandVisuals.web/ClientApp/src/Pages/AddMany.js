@@ -53,7 +53,7 @@ class AddMany extends React.Component {
                      <ReactBootstrapSlider
                         value={this.state.agerange}
                         slideStop={this.onAgeRangeSliderStop}
-                        max={120}
+                        max={200}
                         min={1}
                          />
                      <br/>

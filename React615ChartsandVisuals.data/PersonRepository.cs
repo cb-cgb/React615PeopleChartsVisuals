@@ -66,9 +66,22 @@ namespace React615ChartsandVisuals.data
             }
         }
 
-
-
         static string AgeCategory(int? age)
+        {
+          
+            var decadestart = (age/10)*10;
+            var decadeend =  decadestart + 10;
+            if (decadestart >0)
+            {
+                decadestart++;
+                decadeend = decadestart + 9;
+            }
+
+            string label = $"{decadestart}-{decadeend}";
+            return label;         
+        }
+
+     /*   static string AgeCategory2(int? age)
         {
 
         if (age >= 0 && age <= 10)
@@ -114,10 +127,9 @@ namespace React615ChartsandVisuals.data
             return "no age";
         }
 
+    } */
 
-    }
 
-
-}
+ }
 
 }
