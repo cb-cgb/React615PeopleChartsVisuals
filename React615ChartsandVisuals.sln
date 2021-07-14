@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "React615ChartsandVisuals.web", "React615ChartsandVisuals.web\React615ChartsandVisuals.web.csproj", "{CC74AF5D-0350-47A4-9700-0014B105A46F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "React615ChartsandVisuals.data", "React615ChartsandVisuals.data\React615ChartsandVisuals.data.csproj", "{644669FF-8D2D-4B17-8F54-E496E8AF5CCB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC74AF5D-0350-47A4-9700-0014B105A46F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC74AF5D-0350-47A4-9700-0014B105A46F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC74AF5D-0350-47A4-9700-0014B105A46F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC74AF5D-0350-47A4-9700-0014B105A46F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{644669FF-8D2D-4B17-8F54-E496E8AF5CCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{644669FF-8D2D-4B17-8F54-E496E8AF5CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{644669FF-8D2D-4B17-8F54-E496E8AF5CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{644669FF-8D2D-4B17-8F54-E496E8AF5CCB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F65C917-FD73-4C87-AA08-D3713F37450A}
+	EndGlobalSection
+EndGlobal
